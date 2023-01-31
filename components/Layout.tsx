@@ -19,16 +19,13 @@ const Layout: NextComponentType<NextPageContext, {}, Props> = ({ children }) => 
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/logo.png" />
             </Head>
-            <div
-                className="w-full bg-cover bg-fixed bg-center text-xl overflow-auto"
-                style={{ backgroundImage: "url('/background.jpg')" }}
-            >
+            <div id="layout" className="w-full bg-cover bg-fixed bg-center text-xl overflow-auto">
                 <div className="w-full flex flex-col min-h-screen bg-black/50">
                     <Navbar />
                     <main
                         className={`${roboto.className} flex-1 flex justify-center items-center px-4 py-2`}
                     >
-                        {children}
+                        <div className="container text-gray-200">{children}</div>
                     </main>
                 </div>
             </div>

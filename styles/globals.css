@@ -1,3 +1,17 @@
 @tailwind base;
+
+/* Custome Styles */
+@media (max-width: 1024px) {
+    #layout {
+        background-image: url('/mobile-background.webp');
+    }
+}
+
+@media (min-width: 1024px) {
+    #layout {
+        background-image: url('/desktop-background.webp');
+    }
+}
+
 @tailwind components;
 @tailwind utilities;
