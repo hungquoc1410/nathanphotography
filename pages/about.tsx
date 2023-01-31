@@ -3,8 +3,6 @@ import { doc, getDoc } from 'firebase/firestore';
 import type { InferGetStaticPropsType, NextComponentType, NextPageContext } from 'next';
 import Image from 'next/image';
 
-interface Props {}
-
 export const getStaticProps = async () => {
     const docRef = doc(db, 'content', 'about');
     const docSnap = await getDoc(docRef);

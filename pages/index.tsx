@@ -22,7 +22,7 @@ function Home({ data }: InferGetStaticPropsType<typeof getStaticProps>) {
             <p className="w-full bg-black/50 p-4 rounded-lg">{data.description}</p>
             <Link
                 href="/contact"
-                className="py-4 px-8 rounded-full bg-yellow-400 hover:bg-yellow-500 font-semibold"
+                className="py-4 px-8 rounded-full text-black bg-yellow-400 hover:bg-yellow-500 font-semibold"
             >
                 Liên hệ mình nhé
             </Link>
