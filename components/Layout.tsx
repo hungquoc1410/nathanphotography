@@ -25,7 +25,7 @@ const Layout: NextComponentType<NextPageContext, {}, Props> = ({ children }) => 
             >
                 <div className="w-full h-screen bg-black/50">
                     <Navbar />
-                    <main className={`${roboto.className} px-4 py-2.5`}>{children}</main>
+                    <main className={`${roboto.className} px-4 py-2`}>{children}</main>
                 </div>
             </div>
         </>

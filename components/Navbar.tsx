@@ -26,7 +26,7 @@ const Navbar: NextComponentType<NextPageContext, {}, Props> = (props: Props) => 
     };
 
     return (
-        <nav className={`${roboto.className} px-4 py-2.5 bg-transparent`}>
+        <nav className={`${roboto.className} px-4 py-2`}>
             <div className="container flex flex-wrap items-center justify-between mx-auto">
                 <Link href="/" className="flex items-center">
                     <Image
