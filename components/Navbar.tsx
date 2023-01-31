@@ -21,7 +21,7 @@ const Navbar: NextComponentType<NextPageContext, {}, Props> = (props: Props) => 
         if ((link == 'home' && pathname == '/') || pathname.includes(link)) {
             return 'text-yellow-400';
         } else {
-            return 'text-gray-100';
+            return 'text-gray-200';
         }
     };
 
@@ -37,14 +37,14 @@ const Navbar: NextComponentType<NextPageContext, {}, Props> = (props: Props) => 
                         alt="Logo"
                     />
                     <span
-                        className={`${dancing_script.className} self-center text-2xl font-semibold whitespace-nowrap text-gray-100`}
+                        className={`${dancing_script.className} self-center text-2xl font-semibold whitespace-nowrap text-gray-200`}
                     >
                         Nathan Photography
                     </span>
                 </Link>
                 <button
                     type="button"
-                    className="inline-flex items-center p-2 ml-3 text-gray-100 border border-gray-100 rounded-lg lg:hidden"
+                    className="inline-flex items-center p-2 ml-3 text-gray-200 border border-gray-100 rounded-lg lg:hidden"
                     onClick={() => setMobileNav((p) => !p)}
                 >
                     <span className="sr-only">Open main menu</span>

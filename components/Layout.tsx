@@ -20,12 +20,16 @@ const Layout: NextComponentType<NextPageContext, {}, Props> = ({ children }) => 
                 <link rel="icon" href="/logo.png" />
             </Head>
             <div
-                className="w-full h-screen bg-cover bg-fixed bg-center text-xl"
+                className="w-full bg-cover bg-fixed bg-center text-xl overflow-auto"
                 style={{ backgroundImage: "url('/background.jpg')" }}
             >
-                <div className="w-full h-screen bg-black/50">
+                <div className="w-full flex flex-col min-h-screen bg-black/50">
                     <Navbar />
-                    <main className={`${roboto.className} px-4 py-2`}>{children}</main>
+                    <main
+                        className={`${roboto.className} flex-1 flex justify-center items-center px-4 py-2`}
+                    >
+                        {children}
+                    </main>
                 </div>
             </div>
         </>
