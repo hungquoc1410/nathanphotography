@@ -1,9 +1,25 @@
+import { db } from '@/utils/firebase';
+import { DocumentData, doc, getDoc } from 'firebase/firestore';
 import type { NextComponentType, NextPageContext } from 'next';
 import Link from 'next/link';
 
-interface Props {}
+interface Props {
+    data: DocumentData;
+}
 
-const Pricelist: NextComponentType<NextPageContext, {}, Props> = (props: Props) => {
+export const getStaticProps = async () => {
+    const docRef = doc(db, 'content', 'pricelist');
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+        return {
+            props: { data: docSnap.data() }
+        };
+    } else {
+        console.log('No such document!');
+    }
+};
+
+const Pricelist: NextComponentType<NextPageContext, {}, Props> = ({ data }) => {
     return (
         <div className="w-full flex justify-center">
             <div className="flex flex-col p-8 gap-8 items-center bg-black/50 rounded-3xl">
@@ -24,39 +40,31 @@ const Pricelist: NextComponentType<NextPageContext, {}, Props> = (props: Props) 
                     <div className="p-4 border-solid border-2 rounded-3xl border-yellow-500">
                         <p className="font-bold">Cá nhân</p>
                         <p className="text-xl lg:text-2xl my-2 text-yellow-500 font-bold tracking-wider">
-                            700k
+                            {data.personal_price}
                         </p>
                         <ul className="list-disc list-inside">
-                            <li>Một buổi chụp hình 2 tiếng</li>
-                            <li>Chỉnh sửa 20 hình ảnh theo lựa chọn</li>
+                            {data.personal_details.map((detail: string, index: number) => {
+                                return <li key={`personal_details_${index}`}>{detail}</li>;
+                            })}
                         </ul>
                     </div>
                     <div className="p-4 border-solid border-2 rounded-3xl border-yellow-500">
                         <p className="font-bold">Cặp đôi</p>
                         <p className="text-xl lg:text-2xl my-2 text-yellow-500 font-bold tracking-wider">
-                            1,000k
+                            {data.couple_price}
                         </p>
                         <ul className="list-disc list-inside">
-                            <li>Một buổi chụp hình 3 tiếng</li>
-                            <li>Chỉnh sửa 20 hình ảnh theo lựa chọn</li>
+                            {data.couple_details.map((detail: string, index: number) => {
+                                return <li key={`couple_details_${index}`}>{detail}</li>;
+                            })}
                         </ul>
                     </div>
                 </div>
                 <div className="w-full">
                     <ul className="list-disc list-inside">
-                        <li>
-                            Bạn có thể xem qua những bộ ảnh mình đã thực hiện để có thêm ý tưởng
-                            nhé.
-                        </li>
-                        <li>
-                            Sau khi bạn đã có ý tưởng rồi thì tụi mình sẽ bắt đầu chọn địa điểm và
-                            sắp xếp thời gian theo ý bạn nhé.
-                        </li>
-                        <li>Mình chuyên chụp ở những nơi đơn giản như quán cafe hay công viên.</li>
-                        <li>
-                            Nếu bạn có ý muốn chụp ở studio thì phần chi phí bên studio bạn sẽ tự lo
-                            liệu nhé.
-                        </li>
+                        {data.notes.map((note: string, index: number) => {
+                            return <li key={`notes_${index}`}>{note}</li>;
+                        })}
                     </ul>
                 </div>
             </div>
