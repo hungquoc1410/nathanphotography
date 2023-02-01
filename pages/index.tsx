@@ -1,33 +1,37 @@
-import { db } from '@/utils/firebase';
-import { doc, getDoc } from 'firebase/firestore';
-import { InferGetStaticPropsType } from 'next';
-import Link from 'next/link';
+import { db } from '@/utils/firebase'
+import { doc, getDoc } from 'firebase/firestore'
+import { InferGetStaticPropsType } from 'next'
+import Link from 'next/link'
 
 export const getStaticProps = async () => {
-    const docRef = doc(db, 'content', 'home');
-    const docSnap = await getDoc(docRef);
+    const docRef = doc(db, 'content', 'home')
+    const docSnap = await getDoc(docRef)
     if (docSnap.exists()) {
         return {
-            props: { data: docSnap.data() }
-        };
+            props: { data: docSnap.data() },
+        }
     } else {
-        console.log('No such document!');
+        console.log('No such document!')
     }
-};
+}
 
 function Home({ data }: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
-        <div className="w-full lg:w-1/2 flex flex-col gap-8 justify-center items-start">
-            <p className="text-6xl font-bold text-yellow-400 w-full">{data.title}</p>
-            <p className="w-full bg-black/50 p-4 rounded-lg">{data.description}</p>
+        <div className="flex w-full flex-col items-start justify-center gap-8 lg:w-1/2">
+            <p className="w-full text-5xl font-bold text-yellow-400 lg:text-6xl">
+                {data.title}
+            </p>
+            <p className="w-full rounded-lg bg-black/50 p-4">
+                {data.description}
+            </p>
             <Link
                 href="/contact"
-                className="py-4 px-8 rounded-full text-black bg-yellow-400 hover:bg-yellow-500 font-semibold"
+                className="rounded-full bg-yellow-400 py-4 px-8 font-semibold text-black hover:bg-yellow-500"
             >
                 Liên hệ mình nhé
             </Link>
         </div>
-    );
+    )
 }
 
-export default Home;
+export default Home

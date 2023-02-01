@@ -1,7 +1,11 @@
 {
-    "trailingComma": "none",
-    "tabWidth": 4,
-    "semi": true,
+    "semi": false,
+    "trailingComma": "es5",
     "singleQuote": true,
-    "printWidth": 100
+    "tabWidth": 4,
+    "importOrder": ["^components/(.*)$", "^[./]"],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "plugins": ["prettier-plugin-tailwindcss"],
+    "pluginSearchDirs": false
 }
