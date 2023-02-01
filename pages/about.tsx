@@ -1,10 +1,6 @@
 import { db } from '@/utils/firebase'
 import { doc, getDoc } from 'firebase/firestore'
-import type {
-    InferGetStaticPropsType,
-    NextComponentType,
-    NextPageContext,
-} from 'next'
+import type { InferGetStaticPropsType } from 'next'
 import Image from 'next/image'
 
 export const getStaticProps = async () => {
