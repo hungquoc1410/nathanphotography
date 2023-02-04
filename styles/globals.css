@@ -5,11 +5,19 @@
     #layout {
         background-image: url('/mobile-background.webp');
     }
+
+    #concept_photo {
+        max-height: 80vh;
+    }
 }
 
 @media (min-width: 1024px) {
     #layout {
         background-image: url('/desktop-background.webp');
+    }
+
+    #concept_photo {
+        height: 80vh;
     }
 }
 
