@@ -62,13 +62,21 @@ export const getStaticProps: GetStaticProps = async (context) => {
 const Concept: NextComponentType<NextPageContext, {}, Props> = ({ data }) => {
     return (
         <div className="mb-4 flex flex-wrap justify-center gap-4">
+            <div className="flex w-full justify-center">
+                <Link
+                    href="/gallery"
+                    className="rounded-full border-2 border-gray-200 bg-gray-800 py-2 px-6 font-semibold hover:bg-black"
+                >
+                    Back to Gallery
+                </Link>
+            </div>
             {data.map((image, index) => {
                 return <ConceptPhoto key={`image_${index}`} imageUrl={image} />
             })}
             <div className="flex w-full justify-center">
                 <Link
                     href="/gallery"
-                    className="rounded-full bg-black py-2 px-6 font-semibold hover:bg-yellow-500"
+                    className="rounded-full border-2 border-gray-200 bg-gray-800 py-2 px-6 font-semibold hover:bg-black"
                 >
                     Back to Gallery
                 </Link>

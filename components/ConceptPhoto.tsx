@@ -24,7 +24,7 @@ const ConceptPhoto: NextComponentType<NextPageContext, {}, Props> = ({
             <div
                 className={`${zoom} fixed top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-black/80`}
             >
-                <div className="container relative flex h-5/6 flex-col p-2">
+                <div className="container relative flex h-5/6 p-2">
                     <button
                         type="button"
                         onClick={() => setZoom('hidden')}
