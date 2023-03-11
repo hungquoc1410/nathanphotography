@@ -22,7 +22,7 @@ export const getStaticProps = async () => {
 const Pricelist: NextComponentType<NextPageContext, {}, Props> = ({ data }) => {
     return (
         <div className="flex w-full justify-center">
-            <div className="flex flex-col items-center gap-8 rounded-3xl bg-black/50 p-8">
+            <div className="flex flex-col items-center gap-8 rounded-3xl bg-black/50 p-4 lg:p-8">
                 <div className="text-center text-xl lg:text-2xl">
                     <p>Hiện tại mình đang nhận chụp theo các gói sau đây</p>
                     <p>

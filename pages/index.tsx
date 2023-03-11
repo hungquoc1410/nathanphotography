@@ -17,7 +17,7 @@ export const getStaticProps = async () => {
 
 function Home({ data }: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
-        <div className="flex w-full flex-col items-start justify-center gap-8 lg:w-1/2">
+        <div className="flex w-full flex-col items-start justify-center gap-4 lg:gap-8 lg:w-1/2">
             <p className="w-full text-5xl font-bold text-yellow-400 lg:text-6xl">
                 {data.title}
             </p>

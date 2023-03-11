@@ -68,7 +68,7 @@ const Navbar: NextComponentType<NextPageContext, {}, Props> = (
                         mobileNav ? 'block' : 'hidden'
                     } w-full lg:block lg:w-auto`}
                 >
-                    <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-black/50 p-4 lg:mt-0 lg:flex-row lg:space-x-8 lg:border-0 lg:font-medium">
+                    <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-black/50 py-4 px-6 lg:mt-0 lg:flex-row lg:space-x-8 lg:border-0 lg:font-medium">
                         {navigation.map((link) => {
                             return (
                                 <li key={link}>
